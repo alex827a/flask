@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Lebenslauf</title>
+  <style>
+    .sidebar {
+      width: 20%;
+      background-color: black;
+      color: white;
+    }
+
+    .photo-block {
+      text-align: center;
+      padding: 40px 0;
+      padding-right: 40%;
+    }
+
+    .photo-block img {
+  max-width: 50%;
+  max-height: 0%;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+hr {
+    border-color: grey;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Высота блока */
+    
+}
+
+
+
+
+
+    .info-block {
+      padding: 20px;
+      height: 800px; /* Фиксированная высота блока */
+    }
+
+    .info-block h1,
+    .info-block h2,
+    .info-block h3 {
+      text-align: left;
+    }
+
+    .info-block ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .content {
+      width: 80%;
+      padding: 20px;
+    }
+
+    .interests,
+    .languages {
+      margin-top: 20px;
+    }
+
+    .vertical-line {
+      border-left: 2px solid black;
+      height: 100%;
+      margin-left: 20px;
+    }
+
+    .experience,
+    .education {
+      display: flex;
+    }
+
+    .years {
+      width: 30%;
+    }
+
+    .sprache {
+      width: 10%;
+    }
+   
+
+    .position,
+    .school {
+      width: 70%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 sidebar">
+        <div class="photo-block">
+          <img src="static/photo.jpg" alt="Dein Foto" class="img-fluid rounded-circle">
+        </div>
+        <div class="info-block">
+          <h1>Persönliche Informationen</h1>
+          <hr></hr>
+          
+          <ul class="list-unstyled">
+            <li><b>Name:</b> Oleksandr Prylypko</li>
+            <li><b>Adresse:</b> Oleksandr Prylypko</li>
+            <li><b>Telefonnummer:</b> Oleksandr Prylypko</li>
+            <li><b>E-Mail:</b> Oleksandr Prylypko</li>
+            <li><b>Geburtsdatum:</b> Oleksandr Prylypko</li>
+            <li><b>Geschlecht:</b> Oleksandr Prylypko</li>
+            <li><b>Nationalität:</b> Oleksandr Prylypko</li>
+            <li><b>Familienstand:</b> Oleksandr Prylypko</li>
+          </ul>
+          <hr>
+          <div class="interests">
+            <h2>Interessen</h2>
+            <ul class="list-unstyled">
+              <li>Oleksandr Prylypko</li>
+              <li>Oleksandr Prylypko</li>
+            </ul>
+          </div>
+          <hr>
+          <div class="languages">
+            <h2>Sprachen</h2>
+            <ul class="list-unstyled">
+              <li>Английский B1</li>
+              <li>Немецкий A2</li>
+              <li>Украинский - Родной язык</li>
+              <li>Русский - Родной язык</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 content">
+        <h2>Stellenbeschreibung</h2>
+        <h2>Berufserfahrung</h2>
+        <div class="experience">
+          <div class="position">Stellenbezeichnung</div>
+          <div class="years">Arbeitsjahre</div>
+        </div>
+        <hr>
+        <p>Beschreibung der Position</p>
+        <h3>Ausbildung und Qualifikation</h3>
+        <div class="education">
+          <div class="school">Schulname</div>
+          <div class="years">Ausbildungsjahre</div>
+        </div>
+        <hr>
+        <p>Schulname - Ausbildungsjahre</p>
+        <h3>Fähigkeiten</h3>
+        <ul>
+          <li>Microsoft Word</li>
+          <li>Shell Script</li>
+          <li>C++</li>
+        </ul>
+        <div class="container">
+          <h2 class="text-center my-4">My projects</h2>
+          <div class="row">
+              
+
+                 <!-- Проект 4 -->
+                 {%for job in jobs%}
+                 {% include 'jobitem.html'%}
+                   {% endfor %}
+
+
+
+
+                 
+ 
+          </div>
+          
+      </div>
+      
+      <!-- Подключение Bootstrap JS -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </div>
+  </div>
+</body>
+</html>
